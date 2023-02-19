@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Custom Keebs</title>
+<style>
+    @import url(style.css);
+</style>
+</head>
+<body>
+    <nav>
+         <div id="flex_container">
+            <div id="home" class="nav"><a href='home.html'>HOME</a></div>
+            <div id="showcase" class="nav"><a href='show_case.html'>SHOW CASE</a></div>
+            <div id="anatomy" class="nav"><a href='anatomy.html'>KEYBOARD ANATOMY</a></div>
+            <div id="parts" class="nav"><a href='parts.html'>KEYBOARD PARTS</a></div>
+            <div id="services" class="nav"><a href='build_services.html'>BUILD SERVICES</a></div>
+        </div>
+    </nav>
+    
+    <header>
+        <h1>Build Services</h1>
+        <p>If you need help to build a keyboard, I am here to help!</p>
+    </header>
+    
+    <main>
+        <h2>Price Break Down</h2>
+        <p>The price is varied depending on each configuration of the keyboard, also modding work.</p>
+        <h3>Switches Modification</h3>
+        <p>Lubing primarily using Krytox 205g0. Start at $0.80 per switch. For lubing + filming ~$1.00 on average.</p>
+        <h3>Keyboard Assembly</h3>
+        <p>40%-75% | $50</p>
+        <p>TKL | $60</p>
+        <p>TKL+ | $75</p>
+        <h3>Desoldering</h3>
+        <p>That flat fee is $30 for desoldering a PCB.</p>
+        <p>* Parts, like stabilizers, films etc could be provided if needed. </p>
+            
+        <form>
+            <h4>Here is a rough price estimation</h4>
+            <p>How many switches needed to be lubed and filmed? $1 per switch <input type = 'text' id='lube'></p>
+            <p>How many keyboard needed to assembled?</p>
+            <p>40%-75% | $50 <input type = 'text' id='40'></p>
+            <p>TKL | $60 <input type = 'text' id='tkl'></p>
+            <p>TKL+ | $75 <input type = 'text' id='tkl+'></p>
+            <p>How many PCB needed to be desoldered? $30 per PCB <input type = 'text' id='desolder'></p>
+            <p>How many stabs kits if needed? $18 per kit <input type = 'text' id='stabs'></p>
+        </form>
+    
+    
+    <input type = 'submit' onclick='func1();'>
+    <p id='response'></p>
+    
+    <script>
+        function func1() {
+            var lube = Number(document.getElementById('lube').value);
+            var assemble = Number(document.getElementById('40').value)*50 + Number(document.getElementById('tkl').value)*60 + Number(document.getElementById('tkl+').value)*75;
+            var desolder = Number(document.getElementById('desolder').value)*30;
+            var stabs = Number(document.getElementById('stabs').value)*18;
+            var total = lube + assemble + desolder + stabs;
+            
+            document.getElementById('response').innerHTML = 'Your total is $' + total;    
+            
+        }   
+    </script>
+        
+        <h5>Contact me if you are interested in my service. Advice is free. Thank you!</h5>
+        
+    </main>
+    
+    <footer>
+        <p><a href='home.html'>About Me</a></p>
+        <p><a href='anatomy.html'>Keyboard Anatomy</a></p>
+        <p><a href='build_services.html'>Build Services</a></p>
+    </footer>
+</body>
+</html>

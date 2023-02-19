@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Custom Keebs</title>
+<style>
+    @import url(style.css);
+</style>
+</head>
+<body>
+    <nav>
+         <div id="flex_container">
+            <div id="home" class="nav"><a href='home.html'>HOME</a></div>
+            <div id="showcase" class="nav"><a href='show_case.html'>SHOW CASE</a></div>
+            <div id="anatomy" class="nav"><a href='anatomy.html'>KEYBOARD ANATOMY</a></div>
+            <div id="parts" class="nav"><a href='parts.html'>KEYBOARD PARTS</a></div>
+            <div id="services" class="nav"><a href='build_services.html'>BUILD SERVICES</a></div>
+        </div>
+    </nav>
+    
+    <header>
+        <h1>Keyboard Market Price</h1>
+    </header>
+    
+    <main>
+        <h2>Stock Keyboard</h2>
+        <p>Nowadays, there are more pre-built custom layout mechanical keyboard on the market with many different price range. If you don't have time to build a keyboard, then there is some good brand to pickup one such as Leopold, Akko, Varmillo, and HHKB, etc...</p>
+        <h2>Custom Keyboard</h2>
+        <p>When it comes to custom, there are many budget and also high quality custom keyboards; however, this is a rough price estimation to build a TOFU60 keyboard from KBDFANS which is conridered as an aluminum entry keyboard.</p>
+        <form>
+            <h4>Case</h4>
+            <p><img src="components/e-whitetofu.jpg" width="300px"></p>
+            <p>The e-coating color such as this e-white cost about $110.</p>
+            <p>How many cases do you want? <input type = 'text' id='e-white'></p>
+            
+            <h4>PCB</h4>
+            <p><img src="components/dz60.jpg" width="300px"></p>
+            <p>This is the DZ60 PCB which is available in two option.</p>
+            <p>Soldered for $40 whereas Hotswapable for $55.</p>
+            <p>How many PCBs do you want? </p>
+            <p>Soldered PCB: $40 <input type = 'text' id='solder'></p>
+            <p>Hotswapable PCB: $55 <input type = 'text' id='hotswap'></p>
+            
+            <h4>Plate</h4>
+            <p><img src="components/plate.jpg" width="300px"></p>
+            <p>Three types of plate: Polycarbonate or aluminum for $20. Brass for $40</p>
+            <p>How many plates do you want?</p>
+            <p>Polycarbonate or Alunimum Plate: $20 <input type = 'text' id='poly'></p>
+            <p>Brass Plate: $40 <input type = 'text' id='brass'></p>
+            
+            <h4>Stabilizers</h4>
+            <p><img src="components/durock.jpg" width="300px"></p>
+            <p>I recomend to use either Durock v2 or Cherry stabs. Durock v2 for $18 and Cherry for $15</p>
+            <p>How many stabs kits do you want?</p>
+            <p>Durock v2: $18 <input type = 'text' id='durock'></p>
+            <p>Cherry: $15 <input type = 'text' id='cherry'></p>
+            
+            <h4>Switches</h4>
+            <p><img src="components/gatyellow.jpg" width="300px"></p>
+            <p>As I said, there are ton of switches option. However, I'll choose the Gateron Milky Yellow which is considered as the best budget linear switches. It's about $2.3 for a bag of 10 switches.</p>
+            <p>How many bag of switches do you want? You need at least 7 bags (since the TOFU60 required more than 62 switches).</p>
+            <p>Gateron Yellow: $2.3 <input type = 'text' id='gateron'></p>
+           
+            <h4>Keycaps</h4>
+            <p><img src="components/gmk.png" width="300px"></p>
+            <p>I'll put out two option. One is the PBT Japanese White keycaps set on Amazon for $35. The other is the GMK Hennessey keycaps set for $140 since GMK is a high quality ABS doubleshot keycaps manufracture from German.</p>
+            <p>How many keycaps set do you want?</p>
+            <p>PBT Japanese White: $35 <input type = 'text' id='pbt'></p>
+            <p>GMK Hennessey: $140 <input type = 'text' id='abs'></p>
+        </form>
+    
+    
+            <input type = 'submit' onclick='func1();'>
+            <p id='response'></p>
+            <p id='response1'></p>
+            <p id='response2'></p>
+            <p id='response3'></p>
+            <script>
+                function func1() {
+                    var cases = Number(document.getElementById('e-white').value)*110;
+                    var pcb = Number(document.getElementById('solder').value)*40 + Number(document.getElementById('hotswap').value)*55;
+                    var plate = Number(document.getElementById('poly').value)*20 + Number(document.getElementById('brass').value)*40;
+                    var stabs = Number(document.getElementById('durock').value)*18 + Number(document.getElementById('cherry').value)*15;
+                    var switches = Number(document.getElementById('gateron').value)*2.3;
+                    var keycaps = Number(document.getElementById('pbt').value)*35 + Number(document.getElementById('abs').value)*140;
+                    var subtotal = cases + pcb + plate + stabs + switches + keycaps;
+                    var taxes = subtotal*0.065;
+                    var ship = 20;
+                    var total = subtotal + taxes + ship;
+                    
+                    document.getElementById('response').innerHTML = 'The subtotal is $' + subtotal.toFixed(2);
+                    document.getElementById('response1').innerHTML = 'The taxes is $' + taxes.toFixed(2);
+                    document.getElementById('response2').innerHTML = 'The shipping fee is $' + ship.toFixed(2);
+                    document.getElementById('response3').innerHTML = 'The total is $' + total.toFixed(2);
+
+                }   
+            </script>
+        
+    </main>
+    
+    
+    
+    
+    <footer>
+        <p><a href='home.html'>About Me</a></p>
+        <p><a href='anatomy.html'>Keyboard Anatomy</a></p>
+        <p><a href='build_services.html'>Build Services</a></p>
+    </footer>
+</body>
+</html>
